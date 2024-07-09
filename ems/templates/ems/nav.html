@@ -1,0 +1,49 @@
+{% extends 'ems/base.html'%}
+
+{% block content%}
+<nav class="navbar container navbar-expand-lg">
+    <div class="container-fluid nav-data mt-1 d-flex align-items-center">
+      <div class="logo">
+        <h3 class="logo-txt text-white "><span class="text-sopio m-1 p-1 px-2 pe-2 rounded-3">EMS</span><span class="bg-navy px-2 pe-2 p-1 rounded-3 m-1">SIMPLIFIED</span></h3>
+      </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" aria-current="page" href="{% url 'home' %}">
+                <button type="button" class="btn fw-semibold"  >
+                    Home
+                </button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" aria-current="page" href="{% url 'add' %}">
+                <button type="button" class="btn fw-semibold"  >
+                    Create
+                </button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="{% url 'emplist' %}">
+                <button type="button" class="btn fw-semibold">
+                    Employee list
+                </button>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+</nav>
+
+{% endblock content%}

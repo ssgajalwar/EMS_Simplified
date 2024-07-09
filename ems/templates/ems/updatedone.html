@@ -1,0 +1,11 @@
+{% extends 'ems/base.html'%}
+
+{% block content%}
+<div class=" added-emp">
+   <h2 >Congratulations</h2>
+   <h3>Employee Updated Successfully</h3>
+   <a href="{% url 'home' %}" class="rounded-4 m-2">Go Back Home</a>
+   <a href="{% url 'emplist' %}" class="rounded-4 m-2">Go To EmployeeList</a>
+
+</div>
+{% endblock content%}

@@ -1,0 +1,20 @@
+{% extends 'ems/base.html'%}
+{% block content%}
+
+{% include "ems/nav.html" %}
+
+<div class="container-fluid landing d-flex justify-content-center align-items-center p-2">
+    <div class="w-50">
+            <h4 class="text-center alert alert-info">Add Employee </h4>
+            <form action="" method="post">
+                    {% csrf_token%}
+                    {{form.as_p}}
+                    <div class="d-flex align-items-center">
+                        <input type="submit" class="btn btn-success fw-semibold m-2 rounded-4 bg-opacity-5" value="Submit">
+                        <button type=""  data-bs-dismiss="modal" aria-label="Close" class="btn rounded-4 m-2 btn-hvr text-white col-2  bg-navy fw-semibold">Cancel</button>
+                    </div>
+            </form>
+    </div> 
+</div>
+{% include "ems/footer.html" %}
+{% endblock content%}

@@ -1,0 +1,47 @@
+{% extends 'ems/base.html'%}
+{% load static %}
+
+{% block content%}
+
+{% include "ems/nav.html" %}
+<div class="container-fluid  landing">
+<div class="container">
+    <div class="row d-flex justify-content-around">
+        <div class="col-12 m-2 p-4 text-center bg-navy text-white rounded-4">
+            <h3>Total Employee</h3>
+            <h3> {{emplength}}</h3>
+        </div>
+        <div class="row mb-5">
+            <div class="col-sm-5">
+                <div class="col-10 m-2 p-4 text-center bg-navy text-white rounded-4">
+                    <h3>Employee on leave</h3>
+                     <h3> {{onleave}}</h3>
+                </div>
+                <div class="col-10 m-2 p-4 text-center text-sopio rounded-4">
+                    <h3>Employee Available</h3>
+                     <h3> {{available}}</h3>  
+                </div>
+              
+            </div>
+            <input id="active" class="d-none" type="text" value="{{available}}">
+            <input id="notactive" class="d-none" type="text" value="{{onleave}}">
+            <div class="col-sm-7">
+                <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <h3>Name Of Employee Onleave</h3>
+            <div class="col-12 m-2 d-flex flex-wrap gap-1 h-auto p-4 text-center bg-navy text-white rounded-4">
+                {% for i in onleaveemp%}
+                <span class="bg-white text-navy p-1 rounded-4 px-3 pe-3 m-2 mt-3  text-nowrap">{{i.name}}</span>
+                {% endfor %} 
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% include "ems/footer.html" %}
+<script src="{% static 'js/home.js' %}"></script>
+
+
+{% endblock content%}
